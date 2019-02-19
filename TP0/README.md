@@ -121,6 +121,8 @@ em que:
 
 ### 4\. Algoritmos e tamanhos de chaves
 
+#### Resposta à pergunta P4.1
+
 Consultou-se o site https://webgate.ec.europa.eu/tl-browser/, com o objetivo de identificar os algoritmos e tamanhos de chave utilizados nos certificados das Entidades de Certificação (EC) que emitem certificados digitais qualificados da Croácia, nomeadamente nas EC’s AKD d.o.o e Financijska agencija.
 
 Extraindo os certificados em formato Base64 e inserindo `-----BEGIN CERTIFICATE-----` e `-----END CERTIFICATE-----` no início e fim do ficheiro 
