@@ -144,3 +144,10 @@ identificar que o algoritmo utilizado na emissão de certificados é o SHA1 com 
 ![Financijska](Images/Financijska.png)
 
 Neste caso, é desaconcelhado o uso desta função de hash dado ter sido encontrada uma maneira sistemática de produzir colisões na mesma (conf. [SHAttered](https://shattered.io/)) sendo preferível o uso de uma função da família SHA-2 (e.g.:**SHA-256**) ou até mesmo da família SHA-3 (e.g.: **SHAKE128**).
+
+
+Com base nas seguintes fontes: https://www.keylength.com e https://www.keylength.com, recolheu-se um leque de informações relativas às recomendações existentes para o SHA256 e SHA1, respetivamente. Tendo em conta as informações recolhidas, é possível concluir que o SHA1 é desaconselhado para curto e longo prazo. No entanto, o SHA256 é considerado seguro para um tamanho de chave igual ou superior a 3072 bits, durante um considerável período de tempo (NIST: 2016-2030), abrangendo a validade do certificado em causa.
+Posto isto, seria benéfico que a EC Financijska agencija adopta-se também o SHA256 com RSA.
+
+
+
