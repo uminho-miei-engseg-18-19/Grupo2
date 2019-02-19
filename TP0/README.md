@@ -120,20 +120,25 @@ em que:
 
 Consultou-se o site https://webgate.ec.europa.eu/tl-browser/, com o objetivo de identificar os algoritmos e tamanhos de chave utilizados nos certificados das Entidades de Certificação (EC) que emitem certificados digitais qualificados da Croácia, nomeadamente nas EC’s AKD d.o.o (https://webgate.ec.europa.eu/tl-browser/#/tl/HR/1/0) e Financijska agencija (https://webgate.ec.europa.eu/tl-browser/#/tl/HR/0/0).
 
-- EC AKD d.o.o
+Extraindo os certificados em formato Base64 e inserindo `-----BEGIN CERTIFICATE-----` e `-----END CERTIFICATE-----` no início e fim do ficheiro 
+respetivamente obtém-se dois certificados no formato PEM.
+A invocação do comando `openssl x509 -in certificate.crt -text -noout > certificate.txt` permite guardar em `certificate.txt` a informação relativa
+ao certificado em formato texto que pode ser usada para obter os parâmetros requisitados.
 
-Esta entidade certificadora emite o certificado [HR electronic IDentity](https://webgate.ec.europa.eu/tl-browser/#/tl/HR/1/0).
+#### EC AKD d.o.o
+Esta entidade certificadora recorre  ao certificado [HR electronic IDentity](https://webgate.ec.europa.eu/tl-browser/#/tl/HR/1/0) para assinar 
+certificados digitais qualificados.
+Inspecionando o ficheiro [AKD.txt](Certs/AKD.txt), que corresponde ao formato texto deste certificado, é possível identificar que o algoritmo utilizado
+na emissão de certificados combina a função SHA-256 com a cifra RSA utilizando uma chave de tamanho 4096 bits:
 
-Seguindo o procedimento pedido chega-se facilmente às informações pretendidas, nomeadamente que o algoritmo utilizado é o SHA-256 com cifragem RSA e que o tamanho da chave é 4096 bits.
+!()[]
 
-- EC Financijska agencija 
-Esta entidade certificadora emite o certificado [FINA Digital Certificate Registry -QC](https://webgate.ec.europa.eu/tl-browser/#/tl/HR/0/0)
+#### EC Financijska agencija 
+Esta entidade certificadora emite o certificado [FINA Digital Certificate Registry -QC](https://webgate.ec.europa.eu/tl-browser/#/tl/HR/0/0).
 
-Analogamente obtém-se facilmente as informações pretendidas, i.e, que  algoritmo utilizado é o 
+Mais uma vez, inspeccionando o ficheiro [Financijska.txt](Certs/Financijska.txt), que corresponde ao formato texto deste certificado, é possível 
+identificar que o algoritmo utilizado na emissão de certificados é o SHA1 com cifragem RSA sendo que o tamanho da chave é 2048 bits:
 
+!()[]
 
-
- e que o tamanho da chave é 
-
-
-
+Neste caso, é desaconcelhado o uso desta função de hash dado ter sido encontrada uma maneira sistemática de produzir colisões na mesma (conf. [SHAttered](https://shattered.io/)) sendo preferível o uso de uma função da família SHA-2 (e.g.:**SHA-256**) ou até mesmo da família SHA-3 (e.g.: **SHAKE128**).
