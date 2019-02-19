@@ -133,7 +133,7 @@ certificados digitais qualificados.
 Inspecionando o ficheiro [AKD.txt](Certs/AKD.txt), que corresponde ao formato texto deste certificado, é possível identificar que o algoritmo utilizado
 na emissão de certificados combina a função SHA-256 com a cifra RSA utilizando uma chave de tamanho 4096 bits:
 
-![AKD](Pictures/AKD.png)
+![AKD](Images/AKD.png)
 
 #### EC Financijska agencija 
 Esta entidade certificadora emite o certificado [FINA Digital Certificate Registry -QC](https://webgate.ec.europa.eu/tl-browser/#/tl/HR/0/0).
@@ -141,6 +141,6 @@ Esta entidade certificadora emite o certificado [FINA Digital Certificate Regist
 Mais uma vez, inspeccionando o ficheiro [Financijska.txt](Certs/Financijska.txt), que corresponde ao formato texto deste certificado, é possível 
 identificar que o algoritmo utilizado na emissão de certificados é o SHA1 com cifragem RSA sendo que o tamanho da chave é 2048 bits:
 
-![Financijska](Pictures/Financijska.png)
+![Financijska](Images/Financijska.png)
 
 Neste caso, é desaconcelhado o uso desta função de hash dado ter sido encontrada uma maneira sistemática de produzir colisões na mesma (conf. [SHAttered](https://shattered.io/)) sendo preferível o uso de uma função da família SHA-2 (e.g.:**SHA-256**) ou até mesmo da família SHA-3 (e.g.: **SHAKE128**).
