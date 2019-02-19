@@ -90,7 +90,9 @@ consentimento de todas as partes para gerar o segredo original, permitindo um ma
 
 Por forma a garantir a confidencialidade do segredo seria utilizada uma cifra que, combinado com um MAC num esquema Encrypt-then-MAC, aplicado sobre a etiqueta e o criptograma,
 permitira ainda garantir a integridade e autenticidade do mesmos:
+
 ![encrypt-then-mac](Images/Encrypt-then-MAC.png)
+
 A implementação deste algoritmo seguiria, portanto, a seguinte especificação:
 ```
 def cipher(ptxt,lbl):
