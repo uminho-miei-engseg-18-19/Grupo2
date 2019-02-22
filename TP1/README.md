@@ -20,7 +20,7 @@ certificado para assinatura associado à mesma, respetivamente.
 
 O processo de assinatura cega compreende cinco fases distintas que permitem transformar os dados a serem assinados de maneira a que 
 a assinatura dos dados ofuscados possa ser convertida numa assinatura válida dos dados desofuscados.
-Como tal de seguida apresenta-se o resultado de realizar cada uma dessas fazes em sequência:
+Como tal de seguida apresenta-se o resultado de realizar cada uma dessas fases em sequência:
 
 1. Inicialização: 
 
@@ -45,3 +45,4 @@ Como tal de seguida apresenta-se o resultado de realizar cada uma dessas fazes e
 ![Verification](Images/verifySig.png)
 
 ### Pergunta 1.1
+
