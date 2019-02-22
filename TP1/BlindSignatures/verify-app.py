@@ -3,7 +3,7 @@ from eVotUM.Cripto import eccblind
 from eVotUM.Cripto import utils
 
 def printUsage():
-    print("Usage: python verifySignature-app.py --cert <certificate.crt> --msg <msg> --sDash <signature> -f <requerente>")
+    print("Usage: python verify-app.py --cert <certificate.crt> --msg <msg> --sDash <signature> -f <requerente>")
 
 def showResults(errorCode, validSignature):
     print("Output")

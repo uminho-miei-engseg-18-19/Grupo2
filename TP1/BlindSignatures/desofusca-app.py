@@ -3,7 +3,7 @@ from eVotUM.Cripto import eccblind
 
 
 def printUsage():
-    print("Usage: python unblindSignature-app.py -s <Blind Signature> --RDash <pRDashComponents>")
+    print("Usage: python desofusca-app.py -s <Blind Signature> --RDash <pRDashComponents>")
 
 def showResults(errorCode, signature):
     print("Output")

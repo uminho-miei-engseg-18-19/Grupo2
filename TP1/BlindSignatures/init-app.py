@@ -2,7 +2,7 @@ import sys, getopt
 from eVotUM.Cripto import eccblind
 
 def printUsage():
-    print("Usage: python initSigner-app.py --init")
+    print("Usage: python init-app.py --init")
 
 def main():
     args, _ = getopt.getopt(sys.argv[1:], "", ["init"])

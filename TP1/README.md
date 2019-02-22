@@ -77,7 +77,7 @@ print("pRDashComponents: %s" % pRDashComponents)
 
 
 A ofuscação de dados por parte do requerente é conseguinda com recurso ao comando 
-`$ python generateBlindData-app.py --msg <msg> --RDash <pRDashComponents>` implementado pelo *script* [`ofusca-app.py`](BlindSignatures/ofusca-app.py).
+`$ python ofusca-app.py --msg <msg> --RDash <pRDashComponents>` implementado pelo *script* [`ofusca-app.py`](BlindSignatures/ofusca-app.py).
 Como no caso do `init-app.py`, este define o conjunto de argumentos esperados e respetivos valores:
 ```
 args, _ = getopt.getopt(sys.argv[1:], "", ["msg=", "RDash="])
@@ -87,7 +87,7 @@ O valor da mensagem e do **RDash** é lido dos argumentos passados ao *script* s
 ![ofusca-app](Images/ofusca-app.png)
 
 A assinatura dos dados ofuscados é conseguida através do *script* [blindSignature-app.py](BlindSignatures/blindSignature-app.py) que 
-deve ser invocado da seguinte maneira `$ python generateBlindSignature-app.py --key <pkey.pem> --bmsg <message>`.
+deve ser invocado da seguinte maneira `$ python blindSignature-app.py --key <pkey.pem> --bmsg <message>`.
 A chave privada é identificada pelo ficheiro PEM onde está armazenada e a mensagem ofuscada deve ser passada como valor associado à 
 opção `--bmsg`:
 ```
@@ -104,7 +104,7 @@ e **initComponents** sendo gerada a assinatura da mensagem ofuscada:
 ![blindSignature-app](Images/blindSignature-app.png)
 
 A desofuscação da assinatura é realizada pelo requerente com recurso ao *script* [desofusca-app.py](BlindSignatures/desofusca-app.py)que invoca o 
-comando `$ python unblindSignature-app.py -s <Blind Signature> --RDash <pRDashComponents>` indicando a assinatura ofuscada bem como o valor de 
+comando `$ python desofusca-app.py -s <Blind Signature> --RDash <pRDashComponents>` indicando a assinatura ofuscada bem como o valor de 
 **pRDashComponents** no respetivo argumento:
 ```
 args, _ = getopt.getopt(sys.argv[1:], "s:", ["RDash="])
@@ -118,9 +118,9 @@ sendo posteriormente requisitado o valor dos **BlindComponents** `blindComponent
 
 ![desofusca-app](Images/desofusca-app.png)
 
-A verificação da assinatura é conseguida com recurso ao *script* [verify-app.py](blindSignature/verify-app.py), devendo ser indicado
+A verificação da assinatura é conseguida com recurso ao *script* [verify-app.py](BlindSignatures/verify-app.py), devendo ser indicado
 o certificado associado à chave privada usada para assinar os dados bem como a mensagem original(desofuscada) e a respetiva assinatura:
-`$ python verifySignature-app.py --cert <certificate.crt> --msg <msg> --sDash <signature> -f <requerente>`
+`$ python verify-app.py --cert <certificate.crt> --msg <msg> --sDash <signature> -f <requerente>`
 Os componentes **BlindComponents** e **pRComponents** são lidos do ficheiro passado como argumento de `-f`:
 ```
 if "-f" in args:

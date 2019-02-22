@@ -3,7 +3,7 @@ import sys, getopt
 from eVotUM.Cripto import eccblind
 
 def printUsage():
-    print("Usage: python generateBlindSignature-app.py --key <pkey.pem> --bmsg <message>")
+    print("Usage: python blindSignature-app.py --key <pkey.pem> --bmsg <message>")
 
 def showResults(errorCode, blindSignature):
     print("Output")

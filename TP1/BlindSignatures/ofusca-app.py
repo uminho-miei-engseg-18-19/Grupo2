@@ -3,7 +3,7 @@ from eVotUM.Cripto import eccblind
 
 
 def printUsage():
-    print("Usage: python generateBlindData-app.py --msg <msg> --RDash <pRDashComponents>")
+    print("Usage: python ofusca-app.py --msg <msg> --RDash <pRDashComponents>")
 
 def showResults(errorCode, result):
     print("Output")
