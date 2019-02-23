@@ -195,7 +195,7 @@ Dado o conjunto de informações recolhidas, seleccionou-se aleatoriamente os se
 > `129.215.10.90, homepages.econ.ed.ac.uk`, relacionado com [The University of Edinburgh](https://www.ed.ac.uk/home);
 > `195.251.195.12, agatha.cs.uoi.gr `, referente à [University of Ioannina](https://www.uoi.gr/en/). 
 
-Deste modo, ao executar o *ssh-audit* associado aos servidores selecionados obtém-se os seguintes resultados: [Resultado_Edinburgh](Resultados_SSH_AUDIT/Resultado3.1) e [Resultado_Ioannina](Resultados_SSH_AUDIT/Resultado3.1), dos quais se adquire informação referente ao *software* e à versão utilizada pelos servidores *ssh*:
+Deste modo, ao executar o *ssh-audit* associado aos servidores selecionados obtém-se os seguintes resultados: [Resultado_Edinburgh](Resultados_SSH_AUDIT/Resultado3.1.pdf) e [Resultado_Ioannina](Resultados_SSH_AUDIT/Resultado3.1.pdf), dos quais se adquire informação referente ao *software* e à versão utilizada pelos servidores *ssh*:
 
 - Software e versão utilizada por 129.215.10.90 : OpenSSH 7.2p2
 
