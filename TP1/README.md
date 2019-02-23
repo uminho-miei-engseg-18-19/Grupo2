@@ -145,8 +145,8 @@ Ao consultar o *site* [www.ssllabs.com](https://www.ssllabs.com/ssltest/) e ao e
 
 As três Universidades Europeias, não Portuguesas, escolhidas foram: 
 - [*University of Cambridge*](https://www.cam.ac.uk);
-- [*University of Göttingen*] (https://www.uni-goettingen.de/en/1.html);
-- [*The University of Edinburgh*] (https://www.ed.ac.uk/home).
+- [*University of Göttingen*](https://www.uni-goettingen.de/en/1.html);
+- [*The University of Edinburgh*](https://www.ed.ac.uk/home).
 
 Analisando os [Resultados obtidos](Resultados_SSL) ao efetuar o teste _SSL Server test_ aos *sites* acima referidos observa-se que o site com pior *rating* diz respeito à *University of Göttingen*, apresentado um *rating* B, ao passo que as restantes têm *rating* A.
 
@@ -193,7 +193,7 @@ Começou-se por configurar uma conta em <https://www.shodan.io/>, já que após 
 
 Dado o conjunto de informações recolhidas, seleccionou-se aleatoriamente os seguintes servidores *ssh*:
 > `129.215.10.90, homepages.econ.ed.ac.uk`, relacionado com [The University of Edinburgh](https://www.ed.ac.uk/home);
-> `195.251.195.12, agatha.cs.uoi.gr `, referente à [University of Ioannina] (https://www.uoi.gr/en/). 
+> `195.251.195.12, agatha.cs.uoi.gr `, referente à [University of Ioannina](https://www.uoi.gr/en/). 
 
 Deste modo, ao executar o *ssh-audit* associado aos servidores selecionados obtém-se os seguintes resultados: [Resultado_Edinburgh](Resultados_SSH_AUDIT/Resultado3.1) e [Resultado_Ioannina](Resultados_SSH_AUDIT/Resultado3.1), dos quais se adquire informação referente ao *software* e à versão utilizada pelos servidores *ssh*:
 
@@ -204,17 +204,16 @@ Deste modo, ao executar o *ssh-audit* associado aos servidores selecionados obt�
 Com base na determinação dos *softwares* acima identificados seguem-se os resultados da pesquisa das respetivas vulnerabilidades, recorrendo ao site [CVE details](https://www.cvedetails.com/version-search.php):
 
 ![random](Images/vuln1.png)
-(https://www.cvedetails.com/vulnerability-list/vendor_id-97/product_id-585/version_id-194112/Openbsd-Openssh-7.2.html)
+https://www.cvedetails.com/vulnerability-list/vendor_id-97/product_id-585/version_id-194112/Openbsd-Openssh-7.2.html
 
 ![random](Images/vuln2.png)
-(https://www.cvedetails.com/vulnerability-list/vendor_id-97/product_id-585/version_id-188833/Openbsd-Openssh-6.7.html)
-
+https://www.cvedetails.com/vulnerability-list/vendor_id-97/product_id-585/version_id-188833/Openbsd-Openssh-6.7.html
 
 Com base nos resultados ilustrados pelas duas últimas imagens apresentadas observa-se que a versão OpenSSH 7.2p2 é a que apresenta maior número de vulnerabilidades, tendo no total 7 vulnerabilidades, enquanto que a versão OpenSSH 6.7p1 apresenta 6 vulnerabilidades.
 
 De acordo com o *CVSS score* identificado no *CVE details* nota-se que a vulnerabilidade com gravidade mais alta (de valor igual a 7.8) corresponde à vulnerabilidade identificada por CVE-2016-6515, estando esta associada à versão OpenSSH 7.2p2.
 
-Explorando agora com mais detalhe a vulnerabilidade [CVE-2016-6515] (https://nvd.nist.gov/vuln/detail/CVE-2016-651):
+Explorando agora com mais detalhe a vulnerabilidade [CVE-2016-6515](https://nvd.nist.gov/vuln/detail/CVE-2016-651):
 
 ![random](Images/vuln.png)
 https://www.cvedetails.com/cve/CVE-2016-6515/
