@@ -1,10 +1,8 @@
 # Aula TP - 25/Fev/2019
 
-## Exercícios
+## 1\. TOR (The Onion Router)
 
-### 1\. TOR (The Onion Router)
-
-#### Experiência 1.1
+### Experiência 1.1
 
 Utilizou-se nesta experiência o TOR (através do comando linha `anonsurf`) para mudarmos a nossa localização geográfica:
 
@@ -33,7 +31,7 @@ Note-se que os dados aqui obtidos coincidem com os valores inicialmente recolhid
 
 
 
-#### Resposta à Pergunta P1.1
+### Resposta à Pergunta P1.1
 
 **Para aceder a alguns sites nos EUA tem que estar localizado nos EUA.**
 
@@ -53,7 +51,7 @@ A aplicação TOR do lado do cliente (onion proxy ou OP) executa um pedido ao Di
 (FONTE:<https://pt.wikipedia.org/wiki/Tor_(rede_de_anonimato)>)
 
 
-#### Experiência 1.2
+### Experiência 1.2
 
 A. Observação do circuito do site <https://blog.torproject.org/italian-anti-corruption-authority-anac-adopts-onion-services>:
 
@@ -64,7 +62,7 @@ B. Observação do circuito do site <https://www.expressvpn.com/blog/best-onion-
 ![random](Images/5.png)
 
 
-#### Pergunta P1.2
+### Pergunta P1.2
 
 No seguimento da experiência anterior, acedeu-se a <https://www.facebookcorewwwi.onion/> e verificou-se o circuito para esse site:
 
