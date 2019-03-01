@@ -34,19 +34,25 @@ observados:
 
 **1. Efetuando o comando `sudo anonsurf start` consegue garantir que está localizado nos EUA?**
 
-Ao executar o comando `sudo anonsurf start` não é possível garantir que se ficará localizado nos EUA, algo que se deve à forma como os circuito TOR é estabelecido
-No entanto, existem mecanismos disponíveis para que um utilizador especifique qual o país do último nodo (Onion Router). Assim, para garantir que o OR esteja 
-localizado nos EUA basta acrescentar no ficheiro **/etc/tor/torrc** a linha **ExitNodes {us} StrictNodes 1** e verificar o pretendido executando novamente o 
-comando `sudo anonsurf start`.
+O protocolo TOR estabelece o circuito TOR de forma aleatória com base nos OR's (*Onion Routers*) "conhecidos" como tal, ao executar o comando `sudo anonsurf start`, 
+não é possível garantir que se ficará localizado nos EUA **i.e.** que o nodo de saída (*exit node*) se encontra localizado nos EUA. No entanto, existem mecanismos 
+disponíveis para que um utilizador especifique qual o país do último nodo. Um destes mecanismos exige a acrescentar ao ficheiro **/etc/tor/torrc** a linha 
+**ExitNodes {us} StrictNodes 1** e confirmar a alteração, executando novamente o comando `sudo anonsurf start`.
 
 (FONTE: <https://www.torproject.org/docs/faq.html.en#ChooseEntryExit>)
 
 
 **2. Porquê? Utilize características do protocolo TOR para justificar.**
 
-O protocolo associado ao TOR rege-se pelo anonimato ponto-a-ponto, assim numa rede TOR, o utilizador não tem controlo sobre quais os OR (onion routers) a que se conecta, não sabendo qual é a sequência de OR nem qual é o OR final.
+O protocolo TOR tem como principal objetivo o estabelecimento de ligações anónimas ponto-a-ponto (*peer-to-peer*) tendo como uma das caraterísticas principais
+a geração de um circuito **aleatório** que ligue o cliente ao servidor que este pretende, por meio de nodos conhecidos como Onion Routers(OR).
 
-A aplicação TOR do lado do cliente (onion proxy ou OP) executa um pedido ao Directory Server (DS), possuindo a característica de saltar, entre circuitos, em intervalos de duração de 1 minuto. Nesta aplicação, o DS responde com uma lista de, por norma 3, OR, estabelecendo uma chave simétrica com cada um deles. Posteriormente, o OP cria um circuito composto por esses OR através de um algoritmo que implementa um determinado critério de escolha. Neste processo não existe qualquer ação determinada pelo utilizador, graças ao processo de seleção aleatória de OR's, não sendo assim possível determinar qual o OR ao qual o Op se vai conectar, gerando deste modo localizações de carácter aleatório e fictício.
+O cliente TOR, designado *Onion Proxy* (OP), executa um pedido ao *Directory Server* (DS), um nodo confiável que possui uma lista assinada dos Onion Routers
+disponíveis e respetivo estado, que é requisitada periodicamente pelos clientes. Com base nesta lista é gerado, de maneira aleatória, um circuito composto
+por 3 nodos que ligam o cliente ao destino, sendo este circuito atualizado periodicamente de 1 em 1 minuto. O cliente estabelece, com os 3 ORs, uma chave simétrica 
+com recurso ao protocolo de troca de chaves Diffie-Hellman e às *long-term keys* dos OR's para garantir a autenticadade das mensagens troadas neste protocolo.
+Neste processo não existe qualquer ação determinada pelo cliente, não sendo assim possível determinar qual o OR ao qual o este se vai ligar, resultando neste modo 
+de localizações de carácter aleatório e fictício.
 
 (FONTE:<https://pt.wikipedia.org/wiki/Tor_(rede_de_anonimato)>)
 
