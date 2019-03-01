@@ -89,11 +89,5 @@ O utilizador do serviço abre uma stream até um dos IP's do serviço anónimo a
 
 Assim, existe entre o utilizador e o serviço anónimo um circuito de 6 OR's onde cada uma das partes tem apenas conhecimento de metade do circuito. Desta forma, o utilizador do serviço anónimo tem conhecimento dos três OR's até ao RP, mas a partir daí os saltos são relay porque o utilizador não possuí nenhuma informação sobre eles.
 
-(FONTE: https://www.torproject.org/docs/onion-services.html.en, https://www.torproject.org/about/overview.html.en)
-=======
-# The Onion Router
+(FONTE: <https://www.torproject.org/docs/onion-services.html.en, https://www.torproject.org/about/overview.html.en>)
 
-## E 1.1
-**IP:**
-**Localização:**
->>>>>>> 471e6fbbe628f6a6222742374ffe2a7418d77e18
