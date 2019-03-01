@@ -4,31 +4,28 @@
 
 ### Experiência 1.1
 
-Utilizou-se nesta experiência o TOR (através do comando linha `anonsurf`) para mudarmos a nossa localização geográfica:
+A utilização da ferramenta `anonsurf` permite o estabelecimento de uma ligação cifrada e anónima com recurso ao protocolo TOR. Uma das consequências deste protocolo
+é a alteração da localização aparente do cliente quando acede a um dado *website*. 
 
-1. Abriu-se o browser e registou-se o endereço IP e localização através do site <http://myiplocator.net/> (Note-se que se obtém os mesmos resultados recorrendo ao comando `sudo anonsurf myip`)
-
+1. Abrindo o browser e acedendo à página <http://myiplocator.net/> é possível observar o IP e localização reais da máquina (neste caso do seu ISP):
 
 ![random](Images/1.png)
 
 
-2. Na linha de comando executou-se `sudo anonsurf start`
-3. Fez-se reload (shift-reload) da página web atual e registou-se novamente o endereço IP e localização. 
+2. Após a invocação, na linha de comando, de `sudo anonsurf start`, atualizou-se a página, tendo o cuidado de evitar que fosse apresentada a página guardade em 
+*cache*, permite observar a mudança do endereço IP e localização da máquina que efetuou o pedido ao servidor em causa:
 
 ![random](Images/2.png)
 
-Observe-se que se o mesmo não tivesse mudado , é porque existiu algum erro.
-
-4. Na linha de comando executou-se `sudo anonsurf change`
-5. Fez-se reload (shift-reload) da página web novamente e mais uma vez recolheu-se o endereço IP e a localização, verificando-se mais uma vez que o mesmo sofreu alterações.
-
-6. Na linha de comando executou-se `sudo anonsurf stop`
-7. Por fim, fez-se reload (shift-reload) da página web e apontou-se o endereço IP e localização.
+3. Executando o comando `sudo anonsurf change` resulta no estabelecimento de um novo circuito TOR que ligue o cliente ao servidor, resultando na alteração, mais uma
+vez, do endereço IP e da localização aparentes do cliente:
 
 ![random](Images/3.png)
 
-Note-se que os dados aqui obtidos coincidem com os valores inicialmente recolhidos, tal como era de esperar.
+4. O término da execução do serviço TOR, com recurso ao comando `sudo anonsurf stop`, resulta na alteração do endereço IP e da localização para os valores inicialmente
+observados:
 
+![random](Images/1.png)
 
 
 ### Resposta à Pergunta P1.1
@@ -37,7 +34,10 @@ Note-se que os dados aqui obtidos coincidem com os valores inicialmente recolhid
 
 **1. Efetuando o comando `sudo anonsurf start` consegue garantir que está localizado nos EUA?**
 
-Ao executar o comando `sudo anonsurf start` não é possível garantir que se está localizado nos EUA, devido ao protocolo TOR. No entanto, existem mecanismos disponíveis para que um utilizador especifique qual o país do último nodo (Onion Router). Assim, para garantir que o OR esteja localizado nos EUA basta acrescentar no ficheiro **/etc/tor/torrc** a linha **ExitNodes {us} StrictNodes 1** e verificar o pretendido executando novamente o comando `sudo anonsurf start`.
+Ao executar o comando `sudo anonsurf start` não é possível garantir que se ficará localizado nos EUA, algo que se deve à forma como os circuito TOR é estabelecido
+No entanto, existem mecanismos disponíveis para que um utilizador especifique qual o país do último nodo (Onion Router). Assim, para garantir que o OR esteja 
+localizado nos EUA basta acrescentar no ficheiro **/etc/tor/torrc** a linha **ExitNodes {us} StrictNodes 1** e verificar o pretendido executando novamente o 
+comando `sudo anonsurf start`.
 
 (FONTE: <https://www.torproject.org/docs/faq.html.en#ChooseEntryExit>)
 
