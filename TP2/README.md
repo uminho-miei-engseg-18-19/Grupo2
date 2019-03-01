@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Aula TP - 25/Fev/2019
 
 ## Exercícios
@@ -65,11 +64,6 @@ B. Observação do circuito do site <https://www.expressvpn.com/blog/best-onion-
 ![random](Images/5.png)
 
 
-
-Tire as suas conclusões.
-
-
-
 #### Pergunta P1.2
 
 No seguimento da experiência anterior, acedeu-se a <https://www.facebookcorewwwi.onion/> e verificou-se o circuito para esse site:
@@ -89,5 +83,5 @@ O utilizador do serviço abre uma stream até um dos IP's do serviço anónimo a
 
 Assim, existe entre o utilizador e o serviço anónimo um circuito de 6 OR's onde cada uma das partes tem apenas conhecimento de metade do circuito. Desta forma, o utilizador do serviço anónimo tem conhecimento dos três OR's até ao RP, mas a partir daí os saltos são relay porque o utilizador não possuí nenhuma informação sobre eles.
 
-(FONTE: <https://www.torproject.org/docs/onion-services.html.en, https://www.torproject.org/about/overview.html.en>)
+(FONTE:<https://www.torproject.org/docs/onion-services.html.en, https://www.torproject.org/about/overview.html.en>)
 
