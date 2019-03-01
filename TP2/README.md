@@ -76,16 +76,26 @@ No seguimento da experiência anterior, acedeu-se a <https://www.facebookcorewww
 
 **Porque existem 6 "saltos" até ao site Onion, sendo que 3 deles são "_relay_"? Utilize características do protocolo TOR para justificar.**
 
-Os 6 "saltos" são o resultado de existir anonimato entre ambas as partes envolvidas na conexão, garantindo o tal anonimato ponto-a-ponto. Os primeiros 3 saltos correspondem aos OR fornecidos pelo Directory Server para o utilizador se conectar, de forma anónima, ao serviço destino, e os 3 relays referem-se aos OR do circuito criado pelo OP de destino.
+Uma das funcionalidade do protocolo TOR relaciona-se com a possibilidade de anonimizar serviços **i.e.** o cliente desconhece o servidor
+ao qual se quer ligar, conhecendo apenas o seu endereço público. Para conseguir isto é necessário que sejam efetuados 6 saltos, os primeiros 3 (saltos)
+correspondem aos OR's obtidos através do *Directory Server* o utilizador se ligar, de forma anónima, ao serviço destino, os restantes 3 saltos, *relays*, 
+referem-se aos OR's do circuito criado pelo serviço de destino.
 
+Inicialmente o cliente começa por aceder ao DS para obter informação sobre os IP (*Introduction Points*) e a chave pública do serviço anónimo 
+ao qual quer aceder, XYZ.onion. Após a escolha dos IP's é criado um circuito TOR até um RP (*Rendezvous Point*), que efetuará a ligação ao nodo que disponibiliza
+o serviço (anónimo), fornecendo-lhe um *rendez-vouz cookie* (que permitirá a identificação de forma única do RP ao qual o serviço deve enviar os pacotes que 
+requisitou).
 
-Inicialmente o utilizador começa por aceder ao DS (Directory Server) para obter informação sobre os IP (Introduction Points) e a chave pública do serviço anónimo XYZ.onion. Depois de os IP's estarem escolhidos é criado um circuito TOR até um RP (Rendezvous Point), para o mesmo ser conectado com o serviço anónimo, fornecendo-lhe um rendez-vouz cookie (um segredo aleatório único para posterior reconhecimento do XYZ.onion).
+Os *Rendezvous Points*, permitem que os utilizadores se liguem aos serviços Onion, anteriormente conhecidos como serviços ocultos, sem que cada um conheça a 
+identidade do outro.
 
-Os "rendezvous points", permitem que os utilizadores se conectem aos serviços Onion, anteriormente conhecidos como serviços ocultos, sem que cada um conheça a identidade da rede do outro.
+O utilizador do serviço abre uma *stream* até um dos IP's do serviço anónimo a quem envia uma mensagem, cifrada com a chave pública do serviço anónimo, com a 
+informação sobre o RP, o *rendez-vouz cookie* e a sua parte da chave de sessão, estabelecida através do protocolo *Diffie-Hellman*. O serviço anónimo, para 
+responder ao utilizador, constrói um circuito TOR até ao RP do utilizador, enviando uma mensagem com o *rendez-vouz cookie*, a sua parte da chave *Diffie-Hellman* 
+e o *hash* da chave partilhada. 
 
-O utilizador do serviço abre uma stream até um dos IP's do serviço anónimo a quem envia uma mensagem, cifrada com a chave pública do serviço anónimo, com a informação sobre o RP, o rendez-vouz cookie e a sua parte da chave de sessão Diffie-Hellman. O serviço anónimo, para responder ao utilizador, constrói um circuito TOR até ao RP do utilizador, enviando uma mensagem com o rendez-vouz cookie, a sua parte da chave Diffie-Hellman e o Hash da chave partilhada. 
-
-Assim, existe entre o utilizador e o serviço anónimo um circuito de 6 OR's onde cada uma das partes tem apenas conhecimento de metade do circuito. Desta forma, o utilizador do serviço anónimo tem conhecimento dos três OR's até ao RP, mas a partir daí os saltos são relay porque o utilizador não possuí nenhuma informação sobre eles.
+Existe assim, entre o utilizador e o serviço anónimo, um circuito de 6 OR's onde cada uma das partes tem apenas conhecimento de metade do circuito. Desta forma, o 
+utilizador do serviço anónimo tem conhecimento dos três OR's até ao RP, ponto a partir do qual os saltos são efetuados por *relay nodes* sobre os quais o utilzador
+não dispõe de qualquer informação.
 
 (FONTES:<https://www.torproject.org/docs/onion-services.html.en>, <https://www.torproject.org/about/overview.html.en>)
-
