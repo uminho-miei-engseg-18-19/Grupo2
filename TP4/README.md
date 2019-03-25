@@ -76,3 +76,4 @@ impostas **i.e.** com o número de zeros correspondente à dificuldade do proble
 
 ### Pergunta 2.2
 
+
