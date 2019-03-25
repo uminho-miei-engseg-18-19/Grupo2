@@ -120,7 +120,7 @@ sendo posteriormente requisitado o valor dos **BlindComponents** `blindComponent
 
 A verificação da assinatura é conseguida com recurso ao *script* [verify-app.py](BlindSignatures/verify-app.py), devendo ser indicado
 o certificado associado à chave privada usada para assinar os dados bem como a mensagem original(desofuscada) e a respetiva assinatura:
-`$ python verify-app.py --cert <certificate.crt> --msg <msg> --sDash <signature> -f <requerente>`
+`$ python verify-app.py --cert <certificate.crt> --msg <msg> --sDash <signature> -f <requerente>`.
 Os componentes **BlindComponents** e **pRComponents** são lidos do ficheiro passado como argumento de `-f`:
 ```
 if "-f" in args:
@@ -246,7 +246,7 @@ A descrição da vulnerabilidade [CVE-2016-6515](https://nvd.nist.gov/vuln/detai
 https://www.cvedetails.com/cve/CVE-2016-6515/
 
 
-permite concluir que a mesma possibilita a realização de um ataque de negação de serviço (*denial of service *) ao não impor qualquer limitação face ao comprimento das
+permite concluir que a mesma possibilita a realização de um ataque de negação de serviço (*denial of service*) ao não impor qualquer limitação face ao comprimento das
 *passwords* utilizadas pelo mecanismos de autenticação resultando numa elevada utilização do CPU e tornando o sistema irresponsivo a outros clientes. 
 
 A baixa complexidade do ataque e o facto de este poder ser realizado remotamente sem exigir autenticação prévia justificam a classificação desta vulnerabilidade como grave.
