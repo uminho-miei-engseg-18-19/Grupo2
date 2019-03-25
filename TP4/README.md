@@ -33,3 +33,9 @@ koreCoin.addBlock(new Block(5, new Date(Date.now()).toLocaleString(), {amount: M
 que pode ser verificada imprimindo a *chain*:
 
 ![NewTransactions](Images/NewTransactions.png)
+
+### Experiência 1.2
+Executando o [*script* Python](Blockchain/snakecoin.py) é possível observar uma implementação equivalente à anterior
+de uma *blockchain*:
+
+![SnakeCoin](Images/SnakeCoin.png)
