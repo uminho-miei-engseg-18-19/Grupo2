@@ -67,7 +67,7 @@ tendo sido desenvolvido um [*script*](ProofOfWork/pergunta2.1.sh) que permite au
 de execução para cada um dos valores de dificuldade.
 Como se pode observar:
 
-![p21](Images/p21.png)
+![p21](Images/PoW.png)
 
 o tempo aumenta em função da dificuldade do puzzle. Isto deve-se ao facto de o número de soluções para este serem inferiores,
 levando a que seja necessário efetuar um maior número de tentativas para encontrar um valor de *hash* que respeita as condições
@@ -78,5 +78,3 @@ impostas **i.e.** com o número de zeros correspondente à dificuldade do proble
 ![E22](Images/E22.png)
 
 ### Pergunta 2.2
-
-
