@@ -100,7 +100,7 @@ A implementação deste algoritmo seguiria, portanto, a seguinte especificação
 ```
 def cipher(ptxt,lbl):
 	ctxt = cifra(ptxt)
-	id = getTd()
+	id = getId()
 	res = hmac(id, lbl + ctxt) + lbl + ctxt
 	return res
 
@@ -116,7 +116,7 @@ def decipher(ctxt):
 em que:
 
 - `getID`: função que calcula o identificador “ano.mes.dia” para um dado criptograma, permitindo ao hardware gerar a chave para a cifra e para o MAC
-- `getcomponets`: função que retornou a etiqueta, o criptograma e o identificador
+- `getcomponets`: função que retorna a etiqueta, o criptograma e o identificador
 - `gethmac`: função que extrai o hmac do texto cifrado
 
 ### 4\. Algoritmos e tamanhos de chaves

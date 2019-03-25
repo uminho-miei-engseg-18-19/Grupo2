@@ -34,9 +34,9 @@ observados:
 
 **1. Efetuando o comando `sudo anonsurf start` consegue garantir que está localizado nos EUA?**
 
-O protocolo TOR estabelece o circuito TOR de forma aleatória com base nos OR's (*Onion Routers*) "conhecidos" como tal, ao executar o comando `sudo anonsurf start`, 
+O protocolo TOR estabelece o circuito TOR de forma aleatória com base nos OR's (*Onion Routers*) "conhecidos" e como tal, ao executar o comando `sudo anonsurf start`, 
 não é possível garantir que se ficará localizado nos EUA **i.e.** que o nodo de saída (*exit node*) se encontra localizado nos EUA. No entanto, existem mecanismos 
-disponíveis para que um utilizador especifique qual o país do último nodo. Um destes mecanismos exige a acrescentar ao ficheiro **/etc/tor/torrc** a linha 
+disponíveis para que um utilizador especifique qual o país do último nodo. Um destes mecanismos exige acrescentar ao ficheiro **/etc/tor/torrc** a linha 
 **ExitNodes {us} StrictNodes 1** e confirmar a alteração, executando novamente o comando `sudo anonsurf start`.
 
 (FONTE: <https://www.torproject.org/docs/faq.html.en#ChooseEntryExit>)
@@ -45,14 +45,14 @@ disponíveis para que um utilizador especifique qual o país do último nodo. Um
 **2. Porquê? Utilize características do protocolo TOR para justificar.**
 
 O protocolo TOR tem como principal objetivo o estabelecimento de ligações anónimas ponto-a-ponto (*peer-to-peer*) tendo como uma das caraterísticas principais
-a geração de um circuito **aleatório** que ligue o cliente ao servidor que este pretende, por meio de nodos conhecidos como Onion Routers(OR).
+a geração de um circuito **aleatório** que liga o cliente ao servidor que este pretende, por meio de nodos conhecidos como Onion Routers(OR).
 
 O cliente TOR, designado *Onion Proxy* (OP), executa um pedido ao *Directory Server* (DS), um nodo confiável que possui uma lista assinada dos Onion Routers
 disponíveis e respetivo estado, que é requisitada periodicamente pelos clientes. Com base nesta lista é gerado, de maneira aleatória, um circuito composto
 por 3 nodos que ligam o cliente ao destino, sendo este circuito atualizado periodicamente de 1 em 1 minuto. O cliente estabelece, com os 3 ORs, uma chave simétrica 
 com recurso ao protocolo de troca de chaves Diffie-Hellman e às *long-term keys* dos OR's para garantir a autenticadade das mensagens troadas neste protocolo.
 Neste processo não existe qualquer ação determinada pelo cliente, não sendo assim possível determinar qual o OR ao qual o este se vai ligar, resultando neste modo 
-de localizações de carácter aleatório e fictício.
+em localizações de carácter aleatório e fictício.
 
 (FONTE:<https://pt.wikipedia.org/wiki/Tor_(rede_de_anonimato)>)
 
@@ -78,7 +78,7 @@ No seguimento da experiência anterior, acedeu-se a <https://www.facebookcorewww
 
 Uma das funcionalidade do protocolo TOR relaciona-se com a possibilidade de anonimizar serviços **i.e.** o cliente desconhece o servidor
 ao qual se quer ligar, conhecendo apenas o seu endereço público. Para conseguir isto é necessário que sejam efetuados 6 saltos, os primeiros 3 (saltos)
-correspondem aos OR's obtidos através do *Directory Server* o utilizador se ligar, de forma anónima, ao serviço destino, os restantes 3 saltos, *relays*, 
+correspondem aos OR's obtidos através do *Directory Server* (DS) em que o utilizador se liga, de forma anónima, ao serviço destino; os restantes 3 saltos, *relays*, 
 referem-se aos OR's do circuito criado pelo serviço de destino.
 
 Inicialmente o cliente começa por aceder ao DS para obter informação sobre os IP (*Introduction Points*) e a chave pública do serviço anónimo 
