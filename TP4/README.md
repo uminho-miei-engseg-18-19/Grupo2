@@ -80,5 +80,5 @@ impostas **i.e.** com o número de zeros correspondente à dificuldade do proble
 ### Pergunta 2.2
 O algoritmo computacional de *Proof of Work* corresponde ao cálculo do mínimo múltiplo comum entre a solução do último *Proof of Work* 
 e 9: `incrementor % 9 == 0 and incrementor % last_proof == 0`. Dado a complexidade deste algoritmo, que é linear em relação à última
-solução ($ O(N) $), este não é adequado para a utilização em *mining* dado ser de fácil resolução, não apresentado um custo computacional
+solução (O(N)), este não é adequado para a utilização em *mining* dado ser de fácil resolução, não apresentado um custo computacional
 elevado exigido por este protocolos.
