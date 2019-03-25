@@ -63,7 +63,7 @@ difficulty = Number(process.argv[2])
 
 let koreCoin = new Blockchain(difficulty);
 ```
-tendo sido desenvolvido um [*script bash*](ProofOfWork/pergunta2.1.sh) que permite automatizar o processo de teste do tempo
+tendo sido desenvolvido um [*script*](ProofOfWork/pergunta2.1.sh) que permite automatizar o processo de teste do tempo
 de execução para cada um dos valores de dificuldade.
 Como se pode observar:
 
@@ -73,6 +73,9 @@ o tempo aumenta em função da dificuldade do puzzle. Isto deve-se ao facto de o
 levando a que seja necessário efetuar um maior número de tentativas para encontrar um valor de *hash* que respeita as condições
 impostas **i.e.** com o número de zeros correspondente à dificuldade do problema. 
 
+### Experiência 2.2
+
+![E22](Images/E22.png)
 
 ### Pergunta 2.2
 
