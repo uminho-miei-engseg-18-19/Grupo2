@@ -39,3 +39,18 @@ Executando o [*script* Python](Blockchain/snakecoin.py) é possível observar um
 de uma *blockchain*:
 
 ![SnakeCoin](Images/SnakeCoin.png)
+
+
+## Proof of Work
+*Proof of work* é um mecanismo que permite resolver diversos problemas associados à criação e adição de novos blocos
+numa *blockchain*. Para tal é necessário resolver um problema matemático (puzzle) que consiste em calcular um valor
+(normalmente um *hash*) pre-determinado para ser autorizado a adicionar um dado bloco (conjunto de transações) na
+cadeia. Este problema é elaborado de maneira a que necessite, em média, de 10 minutos para ser resolvido, variando
+de complexidade consoante o número de nodos/mineiros na rede.
+
+### Experiência 2.1
+O puzzle que será desenvolvido requer que os nodos calculem um *hash* com um prefixo de N zeros, com N um valor predefinido.
+A dificuldade deste puzzle está diretamente relacionada N, sendo tanto maior quanto o valor deste.
+
+
+
