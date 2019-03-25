@@ -53,4 +53,26 @@ O puzzle que será desenvolvido requer que os nodos calculem um *hash* com um pr
 A dificuldade deste puzzle está diretamente relacionada N, sendo tanto maior quanto o valor deste.
 
 
+### Pergunta 2.1
+Por forma a automatizar a realização desta pergunta o código da experiência foi [modificado](ProofOfWork/main.pergunta2.1.js) 
+para receber a dificuldade do puzzle como argumento da linha de comandos:
+
+```
+// Get PoW difficulty as a command line argument
+difficulty = Number(process.argv[2])
+
+let koreCoin = new Blockchain(difficulty);
+```
+tendo sido desenvolvido um [*script bash*](ProofOfWork/pergunta2.1.sh) que permite automatizar o processo de teste do tempo
+de execução para cada um dos valores de dificuldade.
+Como se pode observar:
+
+![p21](Images/p21.png)
+
+o tempo aumenta em função da dificuldade do puzzle. Isto deve-se ao facto de o número de soluções para este serem inferiores,
+levando a que seja necessário efetuar um maior número de tentativas para encontrar um valor de *hash* que respeita as condições
+impostas **i.e.** com o número de zeros correspondente à dificuldade do problema. 
+
+
+### Pergunta 2.2
 

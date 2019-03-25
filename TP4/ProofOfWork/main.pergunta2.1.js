@@ -27,9 +27,9 @@ class Block{
 
 
 class Blockchain{
-    constructor(){
+    constructor(diff){
         this.chain = [this.createGenesisBlock()];
-        this.difficulty = 4;
+        this.difficulty = diff;
     }
     
     createGenesisBlock(){
@@ -68,8 +68,10 @@ class Blockchain{
     
 }
 
+// Get PoW difficulty as a command line argument
+difficulty = Number(process.argv[2])
 
-let koreCoin = new Blockchain();
+let koreCoin = new Blockchain(difficulty);
 
 console.log("Mining block 1..");
 koreCoin.addBlock(new Block (1, "01/01/2018", {amount: 20}));
@@ -80,13 +82,4 @@ koreCoin.addBlock(new Block (2, "02/01/2018", {amount: 40}));
 console.log("Mining block 3..");
 koreCoin.addBlock(new Block (3, "02/01/2018", {amount: 40}));
 
-console.log('Is Blockchain valid? ' + koreCoin.isChainValid());
-
-//tampering with blockchain
-koreCoin.chain[1].data = { amount: 100 };
-console.log("tampering with data...");
-koreCoin.chain[1].hash = koreCoin.chain[1].calculateHash();
-
-console.log('Is Blockchain valid? ' + koreCoin.isChainValid());
-
-console.log(JSON.stringify(koreCoin, null, 4));
+//console.log(JSON.stringify(koreCoin, null, 4));
