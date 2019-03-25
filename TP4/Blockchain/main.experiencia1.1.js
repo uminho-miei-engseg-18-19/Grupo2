@@ -71,8 +71,10 @@ koreCoin.chain[1].hash = koreCoin.chain[1].calculateHash();
 
 console.log('Is Blockchain valid? ' + koreCoin.isChainValid());
 
+
 //console.log(JSON.stringify(koreCoin, null, 4));
 
 //blockchain enables adding blocks to it. But never delete a block or make changes to an already created block. 
 
 //What i've missed. Enabling rollback to a previous instance of the blockchain. Proof of work, a peer to peer network
+console.log(JSON.stringify(koreCoin, null, 4));
