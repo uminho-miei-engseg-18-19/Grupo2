@@ -1,10 +1,6 @@
 #!/usr/bin/env node
-const node_sign = require('node-signpdf');
 const fs = require('fs');
-const PDFDocument = require('pdfkit');
-const crypto = require('cryptography');
-
-signer = new node_sign.SignPdf();
+const PDFSign = require('./PDFSIgn/pdfsign');
 
 function load_files(args){
     pdf_index = args.indexOf("--file") + 1;
@@ -14,11 +10,11 @@ function load_files(args){
     if(pdf_index && cert_index){
         fs.stat(args[pdf_index], function(err, stat){
             if(!err){
-                pdf = fs.readFileSync(args[pdf_index]);
+                pdf_raw = fs.readFileSync(args[pdf_index]);
                 fs.stat(args[cert_index], function(err, stat){
                     if(!err){
-                        cert = fs.readFileSync(args[cert_index]);
-                        sign_pdf(pdf, cert);
+                        cert_raw = fs.readFileSync(args[cert_index]);
+                        sign_pdf(pdf_raw, cert_raw);
                     }else{
                         usage();
                     }
@@ -44,14 +40,8 @@ function usage(){
 }
 
 function sign_pdf(pdf, cert){
-    //TODO: add signature placeholder to pdf
-
-    const signedPdf = signer.sign(
-        pdf_with_placeholder,
-        cert
-    )
-
-    //TODO: write signed pdf to filesystem
+    var signed_pdf = PDFSIGN.signpdf(pdf,cert, "");
+    //TODO: write signed pdf to filesystem*/
 }
 
 process_args();

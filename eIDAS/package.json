@@ -24,9 +24,7 @@
     },
     "homepage": "https://github.com/uminho-miei-engseg-18-19/Grupo2#readme",
     "devDependencies": {
-        "cryptography": "^1.2.3",
-        "node-forge": "^0.8.2",
-        "node-signpdf": "^0.3.0",
-        "pdfkit": "^0.9.0"
+        "hummus": "^1.0.98",
+        "node-forge": "^0.8.2"
     }
 }
