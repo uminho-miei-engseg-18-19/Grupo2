@@ -67,22 +67,20 @@ Com mais detalhe, estas vulnerabilidades podem consistir em:
 
 Seguem-se duas vulnerabilidades de projeto específicas:
     
-    - [CVE-2016-1960](https://nvd.nist.gov/vuln/detail/CVE-2016-1960)
-        - **Mozilla Firefox < 45.0 - 'nsHtml5TreeBuilder' Use-After-Free (EMET 5.52 Bypass)**
+- [CVE-2016-1960](https://nvd.nist.gov/vuln/detail/CVE-2016-1960)
         
-            Foi descoberta na versão **44.0.2** e consistia num fluxo contínuo de números inteiros na **classe nsHtml5TreeBuilder** no analisador de sequências HTML5. Permitia que atacantes remotos executassem código arbitrário ou causassem uma negação de serviço **use-after-free**, promovendo a manipulação incorreta das tags finais.
+Foi descoberta na versão **44.0.2** e consistia num fluxo contínuo de números inteiros na **classe nsHtml5TreeBuilder** no analisador de sequências HTML5. Permitia que atacantes remotos executassem código arbitrário ou causassem uma negação de serviço **use-after-free**, promovendo a manipulação incorreta das *tags* finais.
 
-            A vulnerabilidade foi depois corrigida na versão 45 do Mozilla Firefox.
+A vulnerabilidade foi depois corrigida na versão 45 do Mozilla Firefox.
 
         
-    - [CVE-2015-4495](https://nvd.nist.gov/vuln/detail/CVE-2015-4495)
-        - **Mozilla Firefox < 39.03 - 'pdf.js' Same Origin Policy Exploit**
+- [CVE-2015-4495](https://nvd.nist.gov/vuln/detail/CVE-2015-4495)
 
-            Foi descoberta na versão **39.0.3** e quando explorada permitia ao atacante ler e copiar informação do computador da vítima, assim que esta visitasse o website criado para exploração.
+Foi descoberta na versão **39.0.3** e quando explorada permitia ao atacante ler e copiar informação do computador da vítima, assim que esta visitasse o website criado para exploração.
 
-            O leitor de PDF do Mozilla Firefox até à versão **39.0.3**, permitia que atacantes remotos ultrapassassem a política **Same Origin Policy** e lessem ficheiros arbitrários ou ganhassem previlégios, através de vetores que envolvem código JavaScript escrito pelo atacante e um setter nativo.
+O leitor de PDF do Mozilla Firefox até à versão **39.0.3**, permitia que atacantes remotos ultrapassassem a política **Same Origin Policy** e lessem ficheiros arbitrários ou ganhassem privilégios, através de vetores que envolvem código JavaScript escrito pelo atacante e um setter nativo.
 
-            Para corrigir esta vulnerabilidade o utilizador só tinha de atualizar o browser para uma versão superior à 39.0.3.
+Para corrigir esta vulnerabilidade o utilizador só tinha de atualizar o browser para uma versão superior à 39.0.3.
 
 
 - **Vulnerabilidades de codificação** são introduzidas durante a programação do *software*, como por exemplo, um *bug* com implicações de segurança. Assim como as anteriores, estas vulnerabilidades são também catalogadas como **CVE (Common Vulnerabilities and Exposures)**.
@@ -91,19 +89,18 @@ Com mais detalhe, pode-se considerar o caso do *buffer overflow*, caso em que o 
 
 Seguem-se duas vulnerabilidades de codificação específicas:
 
-    - [CVE-2016-5537](https://nvd.nist.gov/vuln/detail/CVE-2016-5537)
-        - **Oracle Netbeans IDE 8.1 - Directory Traversal**
 
-            A vulnerabilidade no componente **NetBeans no Oracle Fusion Middleware 8.1** permitia aos utilizadores locais afetar a confidencialidade, integridade e disponibilidade através de vetores desconhecidos.
+- [CVE-2016-5537](https://nvd.nist.gov/vuln/detail/CVE-2016-5537)
 
-            É uma vulnerabilidade de passagem de diretório que permitia que utilizadores locais com determinadas permissões escrevessem em arquivos arbitrários e, consequentemente, ganhassem privilégios numa entrada de arquivos num ficheiro ZIP importado como um projeto.
+A vulnerabilidade no componente **NetBeans no Oracle Fusion Middleware 8.1** permitia aos utilizadores locais afetar a confidencialidade, integridade e disponibilidade através de vetores desconhecidos.
 
-    - [CVE-2017-9798](https://nvd.nist.gov/vuln/detail/CVE-2017-9798)
-        - **Apache < 2.2.34 / < 2.4.27 - OPTIONS Memory Leak**
+É uma vulnerabilidade de passagem de diretório que permitia que utilizadores locais com determinadas permissões escrevessem em arquivos arbitrários e, consequentemente, ganhassem privilégios numa entrada de arquivos num ficheiro ZIP importado como um projeto.
 
-            Permitia que os atacantes remotos lessem dados secretos da memória do processo se a diretiva limite pudesse ser definida no arquivo **.htaccess** de um utilizador, ou se o **httpd.conf** tivesse certas configurações erradas, (Optionsbleed). Isso afeta o Servidor HTTP Apache nas versões **2.2.34** e **2.4.x** até **2.4.27**. O invasor poderia enviar uma solicitação **HTTP de OPÇÕES** não autenticadas ao tentar ler dados secretos. 
+- [CVE-2017-9798](https://nvd.nist.gov/vuln/detail/CVE-2017-9798)
+
+Permitia que os atacantes remotos lessem dados secretos da memória do processo se a diretiva limite pudesse ser definida no arquivo **.htaccess** de um utilizador, ou se o **httpd.conf** tivesse certas configurações erradas, (Optionsbleed). Isso afeta o Servidor HTTP Apache nas versões **2.2.34** e **2.4.x** até **2.4.27**. O invasor poderia enviar uma solicitação **HTTP de OPÇÕES** não autenticadas ao tentar ler dados secretos. 
             
-            Era um problema de **uso após o uso** e, portanto, os dados secretos nem sempre eram enviados e os dados específicos dependiam de muitos fatores, incluindo a configuração. A exploração com **.htaccess** podia ser bloqueada com um patch para a função **ap_limit_section** no **servidor/core.c**.
+Era um problema de **uso após o uso** e, portanto, os dados secretos nem sempre eram enviados e os dados específicos dependiam de muitos fatores, incluindo a configuração. A exploração com **.htaccess** podia ser bloqueada com um patch para a função **ap_limit_section** no **servidor/core.c**.
 
 
 - **Vulnerabilidades operacionais** são causadas pelo ambiente no qual o *software* é executado ou pela sua configuração. Estas são catalogadas como **CCE (Common Configuration Enumeration)**.
@@ -112,22 +109,21 @@ Com mais detalhe, um exemplo de vulnerabilidade operacional será o de, por exem
 
 Seguem-se duas vulnerabilidades operacionais específicas:
 
-    - **Windows 7**
-        - [CCE-10814-2](http://www.scaprepo.com/view.jsp?id=CCE-10814-2)
+- [CCE-10814-2](http://www.scaprepo.com/view.jsp?id=CCE-10814-2)
     
-            Por padrão, quando a rede do Windows está ativa num servidor, o Windows criará partilhas administrativas ocultas, o que é indesejável em servidores altamente seguros.
+Por padrão, quando a rede do Windows está ativa num servidor, o Windows criará partilhas administrativas ocultas, o que é indesejável em servidores altamente seguros.
 
-        - [CCE-10061-0](http://www.scaprepo.com/view.jsp?id=CCE-10061-0)
+- [CCE-10061-0](http://www.scaprepo.com/view.jsp?id=CCE-10061-0)
 
-            Permite desativar a capacidade do computador cliente de imprimir em HTTP, o que permite que imprima em impressoras na intranet e na Internet.
+Permite desativar a capacidade do computador cliente de imprimir em HTTP, o que permite que imprima em impressoras na intranet e na Internet.
 
 A titulo de curiosidade, segue-se as correções associadas às três categorias de vulnerabilidades apresentadas:
 
-A **correção das vulnerabilidades de projeto** pode implicar uma restruturaçao de todo o sitema, o que poderia implicaria gastos de dinheiro e de tempo excessivos para uma organização, mas também pode implicar apenas modificar componentes específicas do sistema, o que já é exequível.
+A **correção das vulnerabilidades de projeto** pode implicar uma restruturação de todo o sistema, o que poderia implicaria gastos de dinheiro e de tempo excessivos para uma organização, mas também pode implicar apenas modificar componentes específicas do sistema, o que já é exequível.
 
 Na **correção de vulnerabilidades de codificação** a dificuldade pode estar associada à deteção da vulnerabilidade, que por vezes pode ser difícil. A correção de um *bug* de *software* que esteja a introduzir uma vulnerabilidade deste tipo poderá normalmente passar por um ou mais *patches*. No entanto, pode ser necessário introduzir mais vulnerabilidades ou pode simplesmente não ser exequível a aplicação de um *patch* em certos sistemas.
 
-A **correção de vulnerabilidades operacionais** passa por haver uma política rigorosa de práticas a ter quando se lida com dados confienciais, de forma a que entidades terceiras não lhes possam nunca aceder.
+A **correção de vulnerabilidades operacionais** passa por haver uma política rigorosa de práticas a ter quando se lida com dados confidenciais, de forma a que entidades terceiras não lhes possam nunca aceder.
 
 
 ## Resposta à pergunta 1.3
