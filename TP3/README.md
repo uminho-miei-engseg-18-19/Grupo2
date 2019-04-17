@@ -141,10 +141,10 @@ Note-se que a aplicação apresentada suporta dois dos critérios enunciados aci
 
 O **CNIL** disponibilizou uma ferramenta open-source para ajudar no _Data Protection Impact Assessment_ (DPIA) em https://www.cnil.fr/en/open-source-pia-software-helps-carry-out-data-protection-impact-assesment.
 
-### Após a instalação da ferramenta, que se encontra em https://www.cnil.fr/en/open-source-pia-software-helps-carry-out-data-protection-impact-assesment, utilizou-se a mesma para o DPIA do projeto anterior, preenchendo sucintamente todas as componentes pedidas. 
+Após a instalação da ferramenta, que se encontra em https://www.cnil.fr/en/open-source-pia-software-helps-carry-out-data-protection-impact-assesment, utilizou-se a mesma para o DPIA do projeto anterior, preenchendo sucintamente todas as componentes pedidas. 
 
 
-Como resposta a esta pergunta segue-se o documento em formato PDF: [PIA](PIA.pdf)
+### Como resposta a esta pergunta segue-se o documento em formato PDF: [PIA](PIA.pdf)
 
 
 
