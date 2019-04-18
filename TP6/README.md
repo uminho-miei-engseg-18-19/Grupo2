@@ -108,7 +108,9 @@ usados, que mecanismos devem ser usados na gestão as chaves, qual o impacto da 
 Adicionalmente estas considerações devem integrar o processo de avaliação de riscos, sendo a escolha de protocolos condicionada pelos objetivos e tipo
 de controlo pretendidos.
 
-### Gestão de chaves A gestão de chaves criptgráficas deve contemplar não só o seu armazenamento mas também a sua criação, consulta, distribuição,
+### Gestão de chaves 
+
+A gestão de chaves criptgráficas deve contemplar não só o seu armazenamento mas também a sua criação, consulta, distribuição,
 revogação e destruição.  Esta gestão deve garantir a integridade das chaves e impedir a perda das mesmas e acesso por parte de entidades não
 autorizadas.  Como tal devem ser tidos em conta aspetos como:
 1. aplicação da chave **i.e.** algoritmos criptográficos e aplicações 
@@ -120,6 +122,7 @@ autorizadas.  Como tal devem ser tidos em conta aspetos como:
 Para prevenir o uso indevido de chave devem ser atribuídos tempos de validade a cada uma das chaves. Por outro lado é importante garantir a
 autenticidade das chaves públicas atraés de certificados de chave pública emitidos por uma **CA**(*Certificate Authority*) de confiança.
 
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
 Como é possível observar muitos dos controlos anteriormente especificadas contemplam regular os sistema de desenvolvimento de software em si, não
 tendo como foco o produto do mesmo. Isto é motivado pelo facto de que este componente (sistema de desenvolvimento) corresponde a um ponto de falha
@@ -128,5 +131,3 @@ componente de assinaturas PAdES em *Javascript*, é importante considerar não s
 mas também garantir que as *frameworks* usadas para implementar as funcionalidades criptográficas e de tratamento de documentos PDF cumprem os
 requisitos de segurança estabelecidos. Adicionalmente, e no que diz respeito às chaves privadas, associadas aos respetivos certificados, usadas para
 assinar os PDFs devem ser manipuladas de maneira a garantir que não ocorrem fugas de informação que ponham em causa as mesmas.
-
-## P3.1
