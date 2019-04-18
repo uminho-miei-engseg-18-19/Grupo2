@@ -34,3 +34,70 @@ sendo que a fase que contempla o cumprimento do Regulamento Geral de Proteção 
 conta normas e recomendações internacionais para definir os requisitos mínimos de segurança para um dado projeto.
 
 
+## P2.2 - ISO / IEC 27002: 2013
+
+### Política de desenvolvimento seguro
+
+Motivação: regras e regulamentos devem ser aplicados aos processos de desenvolvimento dentro da organização desenvolvimento seguro é necessário para
+produzir serviços, arquiteturas e sistemas seguros
+
+Aspetos: segurança do ambiente de desenvolvimento regulamentos/guias de programação segura, contemplando segurança no processo de desenvolvimento
+checkpoints para verificação da segurança num determinado produto segurança nos sistemas de controlo de versões conhecimento de práticas de
+desenvolvimento seguro e de correção/mitigação de vulnerabilidades
+
+Deve contemplar técnicas de programação segura que devem ser colocadas em vigor não só no desenvolvimento de raiz mas também na reutilização de
+código.
+
+### Controlo de mudanças ao nível do sistema
+
+Devem ser implementados mecanismos que especifiquem, formalmente, a introdução, remoção, alteração de sistemas, garantindo a documentação,
+especificação e controlo de qualidade dos mesmos. Adicionalmente qualquer modificação ao sistema deve garantir que as restrições anterioremente
+impostas continuam a ser cumpridas e que os utilizadores do mesmo não têm acesso a informação não essencial ao desempenho das suas funções.
+
+Atualizações automáticas e outras práticas que favoreçam qualidade de utilizador devem ser consideradas face ao risco que representam relativamente à
+integridade e disponibilidade de um dado sistema.
+
+### Mudanças nas plataformas operacionais
+
+Mudanças em plataformas operacionais devem se precedidas de um processo que garanta que os mecanismos de controlo e integridade das aplicações
+críticas para o funcionamento do sistema não são comprometidas. Como tal é necessário que as mudanças sejam comunicadas atempadamente por forma a
+permitir que estes procedimentos sejam levados a cabo.
+
+
+### Modificações aos pacotes de software utilizados
+
+A modifcação de ferramentas fornecidas por terceiros deve ter em conta o possível impacto nos mecanismos de controlo embutidos nos mesmos. Como tal
+devem ser consideradas outras vias de obter a funcionalidade pretendida, quer através de updates ou mesmo através de ferramentas alternativas.  Caso
+as modificações sejam levadas a cabo deve ser mantida uma cópia original da ferramenta e deve ser garantida a atualização da mesma.
+
+### Princípios de engenharia de sistemas seguros
+
+Boas práticas de desenvolvimento seguro devem ser documentadas, mantidas e especificadas de maneira clara sendo necessário regulamentar as mesmas de
+maneira a que sejam cumpridas nas diversas atividades da empresa. Adicionalmente estas práticas devem ser revistas e atualizadas regularmente para
+garantir que se mantêm eficazes.
+
+### Ambiente de desenvolvimento seguro
+
+O ambiente de desenvolvimento deve ser configurado de maneira a garantir que o mesmo é adequado ao desenvolvimento de software seguro. Estes ambiente
+inclui funcionários, processos e ferramentas que devem ser avaliadas de acordo com o risco que apresentam e a função que desempenham. Todas as medidas
+tomadas neste sentido devem ser documentadas e comunicadas a quem necessitar.
+
+### Desenvolvimento em regime de outsourcing
+
+O desenvolvimento de sistemas em regime *outsourcing* deve ser monitorizado de maneira a garantir que as medidas de segurança são claramente
+especificadas e implementadas.  Como tal devem ser elaborados contratos que especifiquem as práticas de desenho, desenvolvimento e teste de sofware
+seguro; quais os níveis de qualidade esperados; etc.
+
+### Teste da segurança de sistemas
+
+O desenvolvimento de sistemas de software deve contemplar testes e mecanismos que verifiquem a segurança do mesmo, especificando os comportamentos
+esperados face a um conjunto de variáveis de *input*. Estes testes devem ser levados a cabo periodicamente, eventualmente por equipas independentes,
+devendo ser adaptados ao projeto a que se referem.
+
+
+### Testes de aceitação de sistemas
+
+A integração de sistemas deve ser mediada por testes que garantam que os mesmos não violam as práticas de desenvolvimento de seguro ou os regulamentos
+de segurança estabelecidos. Esta análise deve ser levada a cabo por ferramentas de análise automáticas em cenários realistas.
+
+## P3.1
