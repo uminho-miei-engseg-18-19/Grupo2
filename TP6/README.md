@@ -4,7 +4,7 @@
 
 Considerando a fórmula de risco apresentada, é possível identificar dois fatores que condicionam de totalmente o risco existente:
 1. **probabilidade de sucesso de um ataque**
-2. **impacto** do ataque
+1. **impacto** do ataque
 
 Consideremos primeiro o **impacto** de um ataque a um servidor de *homebanking*, de imediato é possível concluir que este será superior ao **impacto**
 de um ataque a um PC doméstico dado que o primeiro contempla um maior número de utilizadores e é afeto a um conjunto de dados sensíveis, nomeadamente
@@ -114,10 +114,10 @@ A gestão de chaves criptgráficas deve contemplar não só o seu armazenamento 
 revogação e destruição.  Esta gestão deve garantir a integridade das chaves e impedir a perda das mesmas e acesso por parte de entidades não
 autorizadas.  Como tal devem ser tidos em conta aspetos como:
 1. aplicação da chave **i.e.** algoritmos criptográficos e aplicações 
-2. distribuição e ativação de chaves
-3. armazenamento e controlo de acesso a chaves
-4. atualização, revogação, recuperação e destruição de chaves
-5. monitorização e registo de ações que envolvam o uso de chaves
+1. distribuição e ativação de chaves
+1. armazenamento e controlo de acesso a chaves
+1. atualização, revogação, recuperação e destruição de chaves
+1. monitorização e registo de ações que envolvam o uso de chaves
 
 Para prevenir o uso indevido de chave devem ser atribuídos tempos de validade a cada uma das chaves. Por outro lado é importante garantir a
 autenticidade das chaves públicas atraés de certificados de chave pública emitidos por uma **CA**(*Certificate Authority*) de confiança.
