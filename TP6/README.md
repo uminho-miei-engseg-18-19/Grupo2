@@ -23,12 +23,12 @@ Como tal, e tendo em conta o que foi anteriormente referido, conclui-se que um s
 
 O ciclo de desenvolvimento de *software* da Microsoft é constituído pelas seguintes fases:
 1. (Pré)Fase de formação
-2. Fase de Requisitos
-3. Fase de Desenho
-4. Fase de Implementação
-5. Fase de Verificação
-6. Fase de Publicação
-7. Fase de Resposta
+1. Fase de Requisitos
+1. Fase de Desenho
+1. Fase de Implementação
+1. Fase de Verificação
+1. Fase de Publicação
+1. Fase de Resposta
 
 sendo que a fase que contempla o cumprimento do Regulamento Geral de Proteção de Dados (RGPD) corresponde à fase de requisitos em que são tidas em
 conta normas e recomendações internacionais para definir os requisitos mínimos de segurança para um dado projeto.
@@ -124,10 +124,10 @@ autenticidade das chaves públicas atraés de certificados de chave pública emi
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
-Como é possível observar muitos dos controlos anteriormente especificadas contemplam regular os sistema de desenvolvimento de software em si, não
+Como é possível observar muitos dos controlos anteriormente especificados regulam o funcionamento do sistema de desenvolvimento de software, não
 tendo como foco o produto do mesmo. Isto é motivado pelo facto de que este componente (sistema de desenvolvimento) corresponde a um ponto de falha
-central que, ao ser comprometido, põe em causa a segurança dos produtos desenvolvidos. Como tal, e no tendo como exemplo o desenvolvimento do
-componente de assinaturas PAdES em *Javascript*, é importante considerar não só os protocolos algoritmos criptográficos usados na assinatura dos PDF's
+central que, ao ser comprometido, põe em causa a segurança dos produtos desenvolvidos. Como tal, e tendo como exemplo o desenvolvimento do
+componente de assinaturas PAdES em *Javascript*, é importante considerar não só os protocolos criptográficos usados na assinatura dos PDF's
 mas também garantir que as *frameworks* usadas para implementar as funcionalidades criptográficas e de tratamento de documentos PDF cumprem os
-requisitos de segurança estabelecidos. Adicionalmente, e no que diz respeito às chaves privadas, associadas aos respetivos certificados, usadas para
-assinar os PDFs devem ser manipuladas de maneira a garantir que não ocorrem fugas de informação que ponham em causa as mesmas.
+requisitos de segurança estabelecidos. Adicionalmente, e no que diz respeito às chaves privadas usadas para assinar os PDFs, deve ser usados mecanismos
+que permitam a sua manipulação de maneira a garantir que não ocorrem fugas de informação que ponham em causa as mesmas.
