@@ -34,7 +34,7 @@ sendo que a fase que contempla o cumprimento do Regulamento Geral de Proteção 
 conta normas e recomendações internacionais para definir os requisitos mínimos de segurança para um dado projeto.
 
 
-## P2.2 - ISO / IEC 27002: 2013
+## P2.2 - [ISO / IEC 27002: 2013](http://www.smartassessor.com/Uploaded/1/Documents/ISO-2017-standard.pdf)
 
 ### Política de desenvolvimento seguro
 
