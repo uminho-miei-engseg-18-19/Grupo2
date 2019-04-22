@@ -131,3 +131,17 @@ componente de assinaturas PAdES em *Javascript*, é importante considerar não s
 mas também garantir que as *frameworks* usadas para implementar as funcionalidades criptográficas e de tratamento de documentos PDF cumprem os
 requisitos de segurança estabelecidos. Adicionalmente, e no que diz respeito às chaves privadas usadas para assinar os PDFs, deve ser usados mecanismos
 que permitam a sua manipulação de maneira a garantir que não ocorrem fugas de informação que ponham em causa as mesmas.
+
+
+## P3.1 - SAMM Assess Phase
+Tendo por base os dados presentes na *sheet "Interview"* salientam-se, de seguida, três práticas de segurança e a sua maturidade, levadas a cabo na realização
+do projeto de Engenharia de Segurança:
+1. **Secure Architecture**: maturidade nível 3
+1. **Implementation Review**: maturidade nível 2 (2.75) 
+1. **Environment Hardening**: maturidade nível 1 (1.85)
+
+## P3.2 - SAMM Set The Target Phase
+[Ficheiro excel com metas pretendidas](SAMM_Assessment_Toolbox.xlsx)
+
+## P3.3 - SAMM Define The Plan Phase
+
