@@ -143,11 +143,11 @@ do projeto de Engenharia de Segurança:
 ## P3.2 - SAMM Set The Target Phase
 As metas relativas ao nível de maturidade para cada uma das práticas de segurança encontram-se apresentadas de seguida:
 1. **Secure Architecture**: nível de maturidade pretendido 3; manter o nível de maturidade
-1. **Implementation Review**: nível de maturidade pretendido 2.75; aumentar o nível de maturidade na 3º fase de desenvolvimento ao garantir que pelo menos metade 
+1. **Implementation Review**: nível de maturidade pretendido 2.75; aumentar o nível de maturidade na 3º fase do ciclo de desenvolvimento ao garantir que pelo menos metade 
 dos *stakeholders* participam no processo de avaliação de código ao rever os resultados deste processo
 1. **Environment Hardening**: nível de maturidade pretentido 2.75;
-    1. na 2º fase do projeto pretende-se garantir que é definido um mecanismo de atualização de sistemas e aplicação de *patches* referentes a dependências consideradas críticas
-    1. na 4º fase do projeto pretende-se garantir que: 
+    1. na 2º fase do ciclo de desenvolvimento pretende-se garantir que é definido um mecanismo de atualização de sistemas e aplicação de *patches* referentes a dependências consideradas críticas
+    1. na 4º fase do ciclo de desenvolvimento pretende-se garantir que: 
         - a maioria dos projetos possuem as atualizações de segurança mais recentes de ferramentas de terceiros
         - o mecanismos de atualização desenvolvido na 2º fase é implementado por todas as equipas da organização
         - a maioria dos projetos implementam mecanismos de verificação do estado de segurança e qualidade do ambiente de desenvolvimento
