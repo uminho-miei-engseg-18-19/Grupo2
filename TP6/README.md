@@ -136,12 +136,34 @@ que permitam a sua manipulação de maneira a garantir que não ocorrem fugas de
 ## P3.1 - SAMM Assess Phase
 Tendo por base os dados presentes na *sheet "Interview"* salientam-se, de seguida, três práticas de segurança e a sua maturidade, levadas a cabo na realização
 do projeto de Engenharia de Segurança:
-1. **Secure Architecture**: maturidade nível 3
-1. **Implementation Review**: maturidade nível 2 (2.75) 
-1. **Environment Hardening**: maturidade nível 1 (1.85)
+1. **Secure Architecture**: nível de maturidade 3
+1. **Implementation Review**: nível de maturidade 2.60 
+1. **Environment Hardening**: nível de maturidade 1.85
 
 ## P3.2 - SAMM Set The Target Phase
-[Ficheiro excel com metas pretendidas](SAMM_Assessment_Toolbox.xlsx)
+As metas relativas ao nível de maturidade para cada uma das práticas de segurança encontram-se apresentadas de seguida:
+1. **Secure Architecture**: nível de maturidade pretendido 3; manter o nível de maturidade
+1. **Implementation Review**: nível de maturidade pretendido 2.75; aumentar o nível de maturidade na 3º fase de desenvolvimento ao garantir que pelo menos metade 
+dos *stakeholders* participam no processo de avaliação de código ao rever os resultados deste processo
+1. **Environment Hardening**: nível de maturidade pretentido 2.75;
+    1. na 2º fase do projeto pretende-se garantir que é definido um mecanismo de atualização de sistemas e aplicação de *patches* referentes a dependências consideradas críticas
+    1. na 4º fase do projeto pretende-se garantir que: 
+        - a maioria dos projetos possuem as atualizações de segurança mais recentes de ferramentas de terceiros
+        - o mecanismos de atualização desenvolvido na 2º fase é implementado por todas as equipas da organização
+        - a maioria dos projetos implementam mecanismos de verificação do estado de segurança e qualidade do ambiente de desenvolvimento
+
 
 ## P3.3 - SAMM Define The Plan Phase
+1. **Secure Architecture**:
 
+![Secure Architecture Roadmap](SecureArchitecture.png)
+
+1. **Implementation Review**:
+
+![Implementation Review Roadmap](ImplementationReview.png)
+
+1. **Environment Hardening**:
+
+![Environment Hardening Roadmap](EnvironmentHardening.png)
+
+[Ficheiro excel com metas pretendidas](SAMM_Assessment_Toolbox.xlsx)
