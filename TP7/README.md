@@ -173,26 +173,53 @@ Posto isto, para receber a mensagem pretendida basta chamar o programa com um ar
 
 ### Pergunta P2.1
 
-Analise o programa overflow.c.
-
-- Alínea 1
+#### Alínea A
 
 A vulnerabilidade presente na **função vulneravel()** diz respeito aos argumentos, mais especificamente a x e y, que representam as dimensões usadas na alocação de memória da matriz. 
 
-Note-se que o primeiro ciclo, por exemplo, apenas termina quando $i \ge x$ e uma vez que x é do tipo size_t com um tamanho de 8 *bytes*, o seu valor máximo será 2^64, quando o valor máximo de i (um int de 4 *bytes*) for 2^31-1. Caso x contenha um valor maior que o máximo dos int, o ciclo tentará incrementar i, causando um overflow.
+Note-se que o primeiro ciclo, por exemplo, só termina quando *i* é superior a *x* e uma vez que x é do tipo size_t com um tamanho de 8 *bytes*, o seu valor máximo será 2^64, quando o valor máximo de i (um int de 4 *bytes*) for 2^31-1. Caso x contenha um valor maior que o máximo dos int, o ciclo tentará incrementar i, causando um *overflow*.
 
 Assim sendo, ao atribuir valores elevados a estes dois inteiros, pode se exceder o limite superior do tipo size_t, pelo que os mesmos seriam convertido em números menores. Devido a este factor de risto, possivelmente se começaria a escrever e corromper os dados de locais da memória não pré-destinados para esta função.
 
 
-- Alínea 2
+#### Alínea 2
 
-- Alínea 3
+```C
+int main() {
+	char * matriz;
+	vulneravel(matriz, 670000000,690000000, '150');
+} 
+```
+
+Observe-se que o **main()** foi completado com valores superiores ao valor máximo do tipo *int* na máquina.
+
+#### Alínea 3
+
+Ao executar o programa, obtem-se o erro *Segmentation Fault*. Isto deve-se ao facto de não ser alocada a memória necessária, pelo simples facto de o número convertido ser inferior ao que se realmente se pretende como tamanho, o que irá fazer com que se tente alterar porções de memórias não alocada.
+
+![random](Imagens/p2_1.png)
 
 ### Pergunta P2.2
 
-- Alínea 1
+#### Alínea 1
 
-- Alínea 2
+Neste programa, a vulnerabilidade na **função vulneravel()** está mais uma vez relacionada com a variável tamanho, passada como argumento. A função não estabelece um limite inferior, pois a variável *tamanho_real* só estabelece o limite superior. Desta forma, se for passado como tamanho o valor 0, à variàvel *tamanho_real*, será atribuído o valor -1. Observe-se que a situação de *overflow* já é considerada.
 
-- Alínea 3
+#### Alínea 2
 
+
+```C
+int main() {
+	char origem[10] = "mensagem";
+	vulneravel(origem, 0);
+} 
+```
+
+#### Alínea 3
+
+![random](Imagens/p2_2.png)
+
+Executando o programa, obtem o erro *Segmentation Fault* pois não é conseguida alocar a memória pretendida. 
+
+Com maior detalhe, como a função em questão apenas verifica se o argumento *tamanho* é inferior a um valor máximo, quando se define o *tamanho = 0*, a variável tamanho_real (tamanho - 1) fica com um valor muito grande (*underflow*). No entanto, a função *malloc* retorna não esse valor mas sim um apontador nulo, pois não consegue reservar espaço de memória para tal.
+Assim, a função *memcpy* ao tentar aceder ao apontador nulo faz com que o programa termine com o erro já mencionado. 
