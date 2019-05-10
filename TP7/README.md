@@ -52,6 +52,7 @@ Note-se ainda que os valores dos segmentos text, data e bss do programa size *me
 A execução do programa em Java faz o valor de i variar automáticamente entre 0 a 9, no Python varia de 0 a 10 e em C++ os valores de i variam ilimitadamente de 7 a 10. Adicionalmente, os programas de Java e de Python terminam com uma exceção porque se tenta aceder a um índice inválido do *array*. Já com programa em C++ isto não ocorre, pois não existe verificação dos limites do *array*. Mais ainda, quando o programa escreve na posição 10 do *array*, que já se encontra fora do limite, está, na realidade, a escrever na variável i, que é alterada para o valor 7, fazendo com que o programa entre assim em *loop*.
 
 As imagens de seguida ilustram o que foi acabado de afirmar.
+
 ![random](Imagens/exp1_3_java.png)
 ![random](Imagens/exp1_3_python.png)
 ![random](Imagens/exp1_3_cpp.png)
@@ -60,6 +61,7 @@ As imagens de seguida ilustram o que foi acabado de afirmar.
 
 Tanto no programa Java como no script Python existe um controlo de acesso de memória que impede a escrita numa zona de memória que não esteja previamente declarada para o efeito e, consequentemente, impede vulnerabilidades relacionadas com 
 *buffer overflows*. Quando se tenta aceder a uma posição de memória que não foi alocada para o *array* em causa este acesso é negado, sendo apresentada uma mensagem de erro que indica o acesso efetuado se encontrava fora dos limites: 
+
 ![random](Imagens/p1_1_java.png)
 ![random](Imagens/p1_1_python.png)
 
@@ -86,13 +88,16 @@ A execução dos programas `LOverflow3.java` e `LOverflow3.py` resulta em execç
 No caso do programam desenvolvido em Java, é apresentado um erro quando é requisitado um valor presente no índice superior 
 ao 10, dado que apenas são alocadas dez posições para o *array*, como tal, quando é requisitado um valor na posição 8 tendo
 apenas sido armazenados 4 valores, o valor devolvido é 0, o valor com o qual as posições de memória são inicializadas. 
+
 ![random](Imagens/p1_2_java.png)
 
 No *script* desenvolvido em Python, `LOverflow3.py`, o comportamento apresentado é semelhante.
+
 ![random](Imagens/p1_2_python.png)
 
 Por outro lado, o programa `LOverflow3.cpp` permite acessos fora das posições alocadas para o *array*, devolvendo valores aleatórios.
 Caso o acesso corresponda a um segmento de memória do programa interdito o programa devolve `Segmentation Fault`:
+
 ![random](Imagens/p1_2_cpp.png)
 
 
