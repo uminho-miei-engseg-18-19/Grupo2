@@ -15,8 +15,6 @@ Também conhecido como Segmento de código, é uma porção de um *object file* 
 
 O mesmo valor em todos os ficheiros deve-se ao facto de este segmento de código, na memória, ser tipicamente apenas de leitura e ter tamanho fixo.
 
-(Fonte: https://en.wikipedia.org/wiki/Code_segment)
-
 
 - **Segmento de dados**
 
@@ -25,8 +23,6 @@ O segmento de dados é uma porção de um *object file* ou o espaço de endereç
 O tamanho desse segmento é determinado pelo tamanho dos valores no código-fonte do programa e não é alterado em tempo de execução.
 
 O ficheiro `size4.c` possui uma variável estática inicializada e o ficheiro`size5.c` possui duas, daí o aumento, de 4 *bytes* por variável, do segmento de dados netes ficheiros. Os restantes ficheiros não apresentam variáveis inicializadas, daí possuirem o mesmo valor.
-
-(Fonte: https://en.wikipedia.org/wiki/Data_segment)
 
 
 - **BSS (Block Started by Symbol)**
@@ -39,8 +35,7 @@ O ficheiro `size3.c` possui o dobro da memória no bss comparativamente com o si
 
 Como o ficheiro `size4.c` possui uma variável não incializada e outra inicializada, o segmento bss ocupa 12 *bytes* (8 + 4), pois para uma variável inicializada a memória alocada é metade.
 
-
-(Fonte: https://en.wikipedia.org/wiki/.bss)
+(FONTES: https://en.wikipedia.org/wiki/Code_segment; https://en.wikipedia.org/wiki/Data_segment; https://en.wikipedia.org/wiki/.bss)
 
 ### Experiência 1.2 - Organização da memória do programa
 
