@@ -143,7 +143,7 @@ Segue-se uma imagem que ilustra o que aqui foi dito:
 ### Pergunta P1.4 - *Read overflow*
 
 O programa ReadOverflow é responsável por fazer *echo* de um determinado número de caracteres previamente definidos pelo utilizador. 
-A primeira caracteristica deste a destacar é o facto de que o valor de *p* passa a ser igual ao valor de *buf*, caso a função *fgets* não retorne NULL. 
+A primeira caracteristica deste a destacar é o facto de que o valor de *p* passa a ser igual ao valor de *buff*, caso a função *fgets* não retorne NULL. 
 Outa característica é a de que o programa não verifica qual o tamanho máximo permitido de carateres a serem introduzidos como *input*. Assim, a vulnerabilidade existente neste programa deve-se ao facto de este ler mais informação que a que era suposta. Se o utilizador só escolher inserir 6 caracteres, por exemplo, não deveria ser possível inserir mais, pois o programa iria ler *bytes* de memória fora da *stack* (pois o *buffer* é a primeira variável local do programa). Isso seria particularmente perigoso, pois o utilizador ao inserir um valor maior que o devido poderia adquirir informação de zonas de memória não permitidas, com conteúdo sensível.
 
 ![random](Imagens/p1_4.png)
@@ -174,7 +174,15 @@ Posto isto, para receber a mensagem pretendida basta chamar o programa com um ar
 
 ## 2\. Vulnerabilidade de inteiros
 
+### Experiência 2.1
 
+![random](Imagens/exp2_1.png)
+
+### Experiência 2.2
+
+![random](Imagens/exp2_2.png)
+
+Para usar inteiros superiores, deve-se recorrer a inteiros de 64 *bits*, ou mais, pois o intervalo \[-2147483648,2147483647] abrange a todos os inteiros possíveis de 32 *bits.*
 
 ### Pergunta P2.1
 
@@ -184,7 +192,7 @@ A vulnerabilidade presente na **função vulneravel()** diz respeito aos argumen
 
 Note-se que o primeiro ciclo, por exemplo, só termina quando *i* é superior a *x* e uma vez que x é do tipo size_t com um tamanho de 8 *bytes*, o seu valor máximo será 2^64, quando o valor máximo de i (um int de 4 *bytes*) for 2^31-1. Caso x contenha um valor maior que o máximo dos int, o ciclo tentará incrementar i, causando um *overflow*.
 
-Assim sendo, ao atribuir valores elevados a estes dois inteiros, pode se exceder o limite superior do tipo size_t, pelo que os mesmos seriam convertido em números menores. Devido a este factor de risto, possivelmente se começaria a escrever e corromper os dados de locais da memória não pré-destinados para esta função.
+Assim sendo, ao atribuir valores elevados a estes dois inteiros, pode se exceder o limite superior do tipo size_t (inteiros positivos), pelo que os mesmos seriam convertido em números menores. Devido a este factor de risto, possivelmente se começaria a escrever e corromper os dados de locais da memória não pré-destinados para esta função.
 
 
 #### Alínea 2
@@ -228,3 +236,28 @@ Executando o programa, obtem o erro *Segmentation Fault* pois não é conseguida
 
 Com maior detalhe, como a função em questão apenas verifica se o argumento *tamanho* é inferior a um valor máximo, quando se define o *tamanho = 0*, a variável tamanho_real (tamanho - 1) fica com um valor muito grande (*underflow*). No entanto, a função *malloc* retorna não esse valor mas sim um apontador nulo, pois não consegue reservar espaço de memória para tal.
 Assim, a função *memcpy* ao tentar aceder ao apontador nulo faz com que o programa termine com o erro já mencionado. 
+
+
+### Experiência 2.4
+
+#### Alínea 1
+
+Ao analisar detalhadamente o código, é possível reparar que neste caso, apesar de se ter estabelecido um limite inferior, o tipo da variável *tamanho_real* foi alterado de *size_t* para *int*. 
+
+Sendo que o limite de um *int* de 32 *bits* está entre -2147483648 a 2147483647, ao atrubuir-se um valor superior a uma variàvel *size_t* (de 64 *bits*), quando esta for convertida para um *int*, uma vez que o valor será superior ao suportado, este será convertido um valor negativo, obtendo-se um *overflow*.
+
+
+#### Alínea 2
+
+```c
+int main() {
+	char *origem;
+	// limite superior de int é 2147483647
+	vulneravel(origem, 2147483649);
+}
+```
+
+#### Alínea 3
+![random](Imagens/exp2_4.png)
+
+Tal como nos programas anteriores, estes também irá produzir o mesmo erro, pelos mesmos motivos já apresentados.
