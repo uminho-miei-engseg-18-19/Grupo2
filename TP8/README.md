@@ -39,3 +39,13 @@ permitindo visualizar todas as temperaturas presentes na base de dados:
 
 
 
+## P1.3 - *Database Backdoors*
+
+Construindo a *query* `101; UPDATE employee SET salary = 550000000 WHERE userid = 101;` é possível atualizar o salário de um utilizador
+cujo `userid` seja igual a 101:
+
+
+![No DB Backdoor](Pictures/NoDBBackdoor.png)
+
+
+![DB Backdoor](Pictures/DBBackdoor.png)
