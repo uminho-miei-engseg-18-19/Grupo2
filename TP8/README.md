@@ -56,7 +56,7 @@ cujo `userid` seja igual a 101:
 A realização de testes em todos os campos permite identificar que o último campo é vulnerável a *Reflect XSS*. Esta suspeita é confirmada
 com a inserção de uma *string* como: `<script>alert('hello')</script>`: 
 
-![Reflected XSS Payload](Pictures/ReflectedXSS_Payload)
+![Reflected XSS Payload](Pictures/ReflectedXSS_Payload.png)
 
 que, ao ser interpretado pelo *browser* como código Javascript, apresenta um alerta no browser do utilizador com a mensagem "hello":
 
