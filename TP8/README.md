@@ -49,3 +49,17 @@ cujo `userid` seja igual a 101:
 
 
 ![DB Backdoor](Pictures/DBBackdoor.png)
+
+
+## P2.1 - *Reflected XSS*
+
+A realização de testes em todos os campos permite identificar que o último campo é vulnerável a *Reflect XSS*. Esta suspeita é confirmada
+com a inserção de uma *string* como: `<script>alert('hello')</script>`: 
+
+![Reflected XSS Payload](Pictures/ReflectedXSS_Payload)
+
+que, ao ser interpretado pelo *browser* como código Javascript, apresenta um alerta no browser do utilizador com a mensagem "hello":
+
+![Reflected XSS](Pictures/ReflectedXSS_Dialog.png)
+
+
