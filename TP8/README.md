@@ -62,4 +62,17 @@ que, ao ser interpretado pelo *browser* como código Javascript, apresenta um al
 
 ![Reflected XSS](Pictures/ReflectedXSS_Dialog.png)
 
+## P3.1 - *Broken Authentication*
 
+O uso de mecanismos para recuperação de password que recorram a perguntas com um número reduzido de respostas e sem limite de tentativas
+erradas permite que sejam realizados ataques de força bruta com base nas respostas possíveis. Por outro lado, o teor das respostas pode 
+facilitar a tarefa de determinar a resposta certa, no caso do utilizador *webgoat* a resposta está provavelmente certa *red* tendo em conta
+os dados que se possuem deste utilizador:
+
+![Broken Authentication - WebGoat](Pictures/BrokenAuthentication_Webgoat.png)
+
+Por outro lado, para o utilizador *admin*, comum em diversos sistemas por permitir, como o nome indicar, gerir o sistema em causa, as respostas
+apesar de menos óbvias podem ser testadas uma a uma com recurso a um ataque de força bruta que pode ser realizado em tempo útil, permitindo
+encontrar a respostas *green* para recuperar a *password* deste utilizador:
+
+![Broken Authentication - admin](Pictures/BrokenAuthentication_admin.png)
